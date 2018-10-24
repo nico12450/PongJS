@@ -23,6 +23,24 @@ class Barre {
 			this.couleur = 'black';
 		}
 
+		this.position = [0,0]
+
+	}
+
+	setPosition(x,y){
+		this.position = [x,y];
+	}
+
+	draw(ctx){
+		ctx.fillStyle = this.couleur;
+ 		ctx.fillRect(this.position[0], this.position[1], this.epaisseur, this.hauteur);
+
+	}
+
+	clear(ctx){
+		ctx.fillStyle = 'rgb(200,200,200)';
+		ctx.fillRect(this.position[0], this.position[1], this.epaisseur, this.hauteur);
+
 	}
 
 	description(){

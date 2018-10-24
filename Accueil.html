@@ -6,12 +6,56 @@
 	  <link rel="stylesheet" href="style.css">
       <script src="Barre.js"></script>
       <script src="Balle.js"></script>
-      <script src="Main.js"></script>
 	  <style type="text/css">
 	  </style>
 
 	</head>
-	<body onload = 'draw();'>
+	<body>
 		<canvas id="Pong"></canvas>
+		<script type="text/javascript">
+			var canvas = document.getElementById('Pong')
+			var ctx = canvas.getContext('2d')
+
+		  	ctx.canvas.width  = window.innerWidth-10;
+		 	ctx.canvas.height = window.innerHeight-10;
+
+		 	var b1 = new Barre();
+		 	b1.setPosition(10, ctx.canvas.height/2-b1.hauteur/2);
+		 	//b1.description();
+
+		 	var b2 = new Barre(10,100,'blue');
+		 	b2.setPosition(ctx.canvas.width - 20, ctx.canvas.height/2-b2.hauteur/2);
+		 	//b2.description();
+
+		 	var balle = new Balle();
+		 	//balle.description();
+
+		 	b1.draw(ctx);
+
+		 	b2.draw(ctx);
+
+		 	document.addEventListener('keypress', (event) => {
+
+				var nomTouche = event.key;
+				console.log(nomTouche);
+
+				if(nomTouche == 'z'){
+
+					b1.clear(ctx)
+					b1.setPosition(b1.position[0],b1.position[1] - 1);
+					b1.draw(ctx);
+
+				}
+
+				else if(nomTouche == 's'){
+
+					b1.clear(ctx)
+					b1.setPosition(b1.position[0],b1.position[1] + 1);
+					b1.draw(ctx);
+
+				}
+
+			});
+		</script>
 	</body>
 </html>
