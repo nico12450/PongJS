@@ -21,37 +21,35 @@
 
 		 	var b1 = new Barre();
 		 	b1.setPosition(10, ctx.canvas.height/2-b1.hauteur/2);
+		 	b1.setContexte(ctx);
 		 	//b1.description();
 
 		 	var b2 = new Barre(10,100,'blue');
 		 	b2.setPosition(ctx.canvas.width - 20, ctx.canvas.height/2-b2.hauteur/2);
+		 	b2.setContexte(ctx);
 		 	//b2.description();
 
 		 	var balle = new Balle();
 		 	//balle.description();
 
-		 	b1.draw(ctx);
+		 	b1.draw();
 
-		 	b2.draw(ctx);
+		 	b2.draw();
 
 		 	document.addEventListener('keypress', (event) => {
 
 				var nomTouche = event.key;
-				console.log(nomTouche);
+				//console.log(nomTouche);
 
 				if(nomTouche == 'z'){
 
-					b1.clear(ctx)
-					b1.setPosition(b1.position[0],b1.position[1] - 1);
-					b1.draw(ctx);
+					b1.move(b1.vitesse);
 
 				}
 
 				else if(nomTouche == 's'){
 
-					b1.clear(ctx)
-					b1.setPosition(b1.position[0],b1.position[1] + 1);
-					b1.draw(ctx);
+					b1.move(-b1.vitesse);
 
 				}
 

@@ -24,6 +24,8 @@ class Barre {
 		}
 
 		this.position = [0,0]
+		this.contexte;
+		this.vitesse = 1;
 
 	}
 
@@ -31,16 +33,26 @@ class Barre {
 		this.position = [x,y];
 	}
 
-	draw(ctx){
-		ctx.fillStyle = this.couleur;
- 		ctx.fillRect(this.position[0], this.position[1], this.epaisseur, this.hauteur);
+	setContexte(ctx){
+		this.contexte = ctx;
+	}
+
+	draw(){
+		this.contexte.fillStyle = this.couleur;
+ 		this.contexte.fillRect(this.position[0], this.position[1], this.epaisseur, this.hauteur);
 
 	}
 
-	clear(ctx){
-		ctx.fillStyle = 'rgb(200,200,200)';
-		ctx.fillRect(this.position[0], this.position[1], this.epaisseur, this.hauteur);
+	clear(){
+		this.contexte.fillStyle = 'rgb(200,200,200)';
+		this.contexte.fillRect(this.position[0], this.position[1], this.epaisseur, this.hauteur);
 
+	}
+
+	move(i){
+		this.clear();
+		this.setPosition(this.position[0],this.position[1] - i);
+		this.draw();
 	}
 
 	description(){
