@@ -25,7 +25,8 @@ class Barre {
 
 		this.position = [0,0]
 		this.contexte;
-		this.vitesse = 1;
+		this.vitesse = 10;
+		this.acceleration = 0.2;
 
 	}
 
@@ -53,6 +54,10 @@ class Barre {
 		this.clear();
 		this.setPosition(this.position[0],this.position[1] - i);
 		this.draw();
+	}
+
+	accelere(){
+		this.vitesse += this.acceleration;
 	}
 
 	description(){

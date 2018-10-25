@@ -24,7 +24,7 @@
 		 	b1.setContexte(ctx);
 		 	//b1.description();
 
-		 	var b2 = new Barre(10,100,'blue');
+		 	var b2 = new Barre();
 		 	b2.setPosition(ctx.canvas.width - 20, ctx.canvas.height/2-b2.hauteur/2);
 		 	b2.setContexte(ctx);
 		 	//b2.description();
@@ -44,16 +44,54 @@
 				if(nomTouche == 'z'){
 
 					b1.move(b1.vitesse);
+					//b1.accelere();
 
 				}
 
 				else if(nomTouche == 's'){
 
 					b1.move(-b1.vitesse);
+					//b1.accelere();
+
+				}
+
+				if(nomTouche == '8'){
+
+					b2.move(b2.vitesse);
+					//b2.accelere();
+
+				}
+
+				else if(nomTouche == '2'){
+
+					b2.move(-b2.vitesse);
+					//b2.accelere();
 
 				}
 
 			});
+/*
+			document.addEventListener('keyup', (event) => {
+
+				var nomTouche = event.key;
+				//console.log(nomTouche);
+
+				if(nomTouche == 'z' || nomTouche == 's'){
+
+					b1.vitesse = 1;
+
+				}
+
+				if(nomTouche == '8' || nomTouche == '2'){
+
+					b2.vitesse = 1;
+
+				}
+
+			});
+*/
+
+
 		</script>
 	</body>
 </html>
