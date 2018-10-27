@@ -36,10 +36,19 @@
 
 		 	b2.draw();
 
-		 	document.addEventListener('keypress', (event) => {
+		 	var listeTouches = [];
 
-				var nomTouche = event.key;
+		 	document.addEventListener('keydown', (event) => {
+
+				//var nomTouche = event.key;
 				//console.log(nomTouche);
+				if(listeTouches.indexOf(event.key) == -1){
+					listeTouches.push(event.key);
+				}
+
+				//console.log(listeTouches);
+
+				/*
 
 				if(nomTouche == 'z'){
 
@@ -48,7 +57,7 @@
 
 				}
 
-				else if(nomTouche == 's'){
+				if(nomTouche == 's'){
 
 					b1.move(-b1.vitesse);
 					//b1.accelere();
@@ -62,34 +71,32 @@
 
 				}
 
-				else if(nomTouche == '2'){
+				if(nomTouche == '2'){
 
 					b2.move(-b2.vitesse);
 					//b2.accelere();
 
 				}
 
+				*/
+
+
 			});
-/*
+
+
 			document.addEventListener('keyup', (event) => {
 
-				var nomTouche = event.key;
-				//console.log(nomTouche);
+				var index = listeTouches.indexOf(event.key);
 
-				if(nomTouche == 'z' || nomTouche == 's'){
-
-					b1.vitesse = 1;
-
+				if (index > -1) {
+ 					listeTouches.splice(index, 1);
 				}
 
-				if(nomTouche == '8' || nomTouche == '2'){
+				//console.log(listeTouches);
 
-					b2.vitesse = 1;
-
-				}
 
 			});
-*/
+
 
 
 		</script>
