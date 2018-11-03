@@ -102,6 +102,9 @@
 
 			function animation(){
 
+				b1.draw();
+				b2.draw();
+
 				if(listeTouches.indexOf('z')>-1){
 					b1.move(b1.vitesse);
 				}
@@ -117,6 +120,8 @@
 				if(listeTouches.indexOf('2')>-1){
 					b2.move(-b2.vitesse);
 				}
+
+				balle.move();
 
 			}
 
