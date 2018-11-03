@@ -6,7 +6,7 @@ class Balle {
 			this.taille = taille;
 		}
 		else{
-			this.taille = 1;
+			this.taille = 10;
 		}
 
 		if (typeof couleur != "undefined") {
@@ -15,6 +15,27 @@ class Balle {
 		else{
 			this.couleur = 'black';
 		}
+
+		this.position = [0,0]
+		this.vitesse = 10;
+		this.contexte;
+
+	}
+
+	setContexte(ctx){
+		this.contexte = ctx;
+		this.position = [ctx.canvas.width/2,ctx.canvas.height/2]
+	}
+
+	draw(){
+		this.contexte.fillStyle = this.couleur;
+ 		this.contexte.fillRect(this.position[0], this.position[1], this.taille, this.taille);
+
+	}
+
+	clear(){
+		this.contexte.fillStyle = 'rgb(200,200,200)';
+		this.contexte.fillRect(this.position[0], this.position[1], this.taille, this.taille);
 
 	}
 

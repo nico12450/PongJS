@@ -30,11 +30,14 @@
 		 	//b2.description();
 
 		 	var balle = new Balle();
+		 	balle.setContexte(ctx);
 		 	//balle.description();
 
 		 	b1.draw();
 
 		 	b2.draw();
+
+		 	balle.draw();
 
 		 	var listeTouches = [];
 
@@ -117,7 +120,7 @@
 
 			}
 
-			//window.setInterval(animation,50);
+			window.setInterval(animation,50);
 
 
 
