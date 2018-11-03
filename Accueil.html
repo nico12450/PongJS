@@ -97,6 +97,28 @@
 
 			});
 
+			function animation(){
+
+				if(listeTouches.indexOf('z')>-1){
+					b1.move(b1.vitesse);
+				}
+
+				if(listeTouches.indexOf('s')>-1){
+					b1.move(-b1.vitesse);
+				}
+
+				if(listeTouches.indexOf('8')>-1){
+					b2.move(b2.vitesse);
+				}
+
+				if(listeTouches.indexOf('2')>-1){
+					b2.move(-b2.vitesse);
+				}
+
+			}
+
+			//window.setInterval(animation,50);
+
 
 
 		</script>
